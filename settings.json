@@ -1,0 +1,223 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "edit_predictions": {
+    "disabled_globs": [],
+    "mode": "eager",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null
+    },
+    "enabled_in_assistant": false
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-3.7-sonnet"
+    },
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "claude-3-7-sonnet"
+    },
+    "version": "2"
+  },
+  // Vim mode settings
+  "vim_mode": true,
+  "vim": {
+    "enable_vim_sneak": true
+  },
+  // use relative line numbers
+  "relative_line_numbers": true,
+  "tab_bar": {
+    "show": true
+  },
+  //Tema
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Darcula Dark"
+  },
+  // UI font features
+  "ui_font_features": {
+    "calt": true
+  },
+  "ui_font_family": ".SystemUIFont",
+  "ui_font_size": 16,
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_size": 14,
+  "cursor_shape": "underline",
+  "terminal": {
+    "font_family": "JetBrainsMono Nerd Font Mono",
+    "toolbar": {
+      "breadcrumbs": false
+    }
+  },
+
+  "autosave": "on_focus_change",
+  // Enable file icons and Git status in tabs
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+    "**/vendor",
+    "**/.tmp*"
+  ],
+  // Files and directories to exclude during search
+  "search.exclude": {
+    "**/*.snap": true,
+    "**/.git": true,
+    "**/.github": false,
+    "**/.nuxt": true,
+    "**/.output": true,
+    "**/.pnpm": true,
+    "**/.vscode": true,
+    "**/.yarn": true,
+    "**/node_modules": true,
+    "**/out/**": true,
+    "**/package-lock.json": true,
+    "**/pnpm-lock.yaml": true,
+    "**/temp": true,
+    "**/yarn.lock": true,
+    "**/CHANGELOG*": true,
+    "**/LICENSE*": true
+  },
+  "git": {
+    // Enable Git integration
+    "enabled": true,
+    // Automatically fetch latest changes from remote repository periodically
+    "autoFetch": true,
+    // Set auto-fetch interval to 300 seconds (5 minutes)
+    "autoFetchInterval": 300,
+    // Automatically fetch latest Git changes when editor gains focus
+    "autoFetchOnFocus": true,
+    // Automatically fetch latest Git changes when switching editor windows
+    "autoFetchOnWindowChange": true,
+    // Automatically fetch latest Git changes during build events
+    "autoFetchOnBuild": true,
+    // Display Git status in the editor
+    "git_status": true,
+    // Auto-fetch Git changes during specific build events (e.g., build, run, debug)
+    "autoFetchOnBuildEvents": ["build", "run", "debug"],
+    // Delay auto-fetch by 1500 milliseconds (1.5 seconds) after build events
+    "autoFetchOnBuildEventsDelay": 1500,
+    // Delay auto-fetch by 1500 milliseconds (1.5 seconds) after build
+    "autoFetchOnBuildDelay": 1500,
+    // Display Git status in the editor's gutter, only for tracked files
+    "git_gutter": "tracked_files",
+    // Display inline blame with commit information beside code lines
+    "inline_blame": {
+      "enabled": false,
+      "position": "right"
+    },
+    // Lengaujes de programacion
+    "languages": {
+      "Python": {
+        "language_servers": ["pyright", "ruff"]
+      },
+      "languages": {
+        "C++": {
+          "formatter": {
+            "external": {
+              "command": "clang-format",
+              "arguments": ["-style={BasedOnStyle: Google, IndentWidth: 2}"]
+            }
+          }
+        },
+        "Go": {
+          "code_actions_on_format": {
+            "source.organizeImports": true
+          }
+        },
+        "Rust": {
+          "tab_size": 2
+        },
+        "TSX": {
+          "formatter": {
+            "external": {
+              "command": "prettier",
+              "arguments": [
+                "--stdin-filepath",
+                "{buffer_path}",
+                "--tab-width",
+                "2"
+              ]
+            }
+          },
+          "code_actions_on_format": {
+            "source.organizeImports": true,
+            "source.fixAll.eslint": true
+          }
+        },
+        "JavaScript": {
+          "formatter": {
+            "external": {
+              "command": "prettier",
+              "arguments": [
+                "--stdin-filepath",
+                "{buffer_path}",
+                "--tab-width",
+                "2"
+              ]
+            }
+          },
+          "code_actions_on_format": {
+            "source.fixAll.eslint": true
+          }
+        },
+        "TypeScript": {
+          "formatter": {
+            "external": {
+              "command": "prettier",
+              "arguments": [
+                "--stdin-filepath",
+                "{buffer_path}",
+                "--tab-width",
+                "2"
+              ]
+            }
+          },
+          "code_actions_on_format": {
+            "source.organizeImports": true,
+            "source.fixAll.eslint": true
+          }
+        }
+      },
+
+      "lsp": {
+        "rust-analyzer": {
+          "initialization_options": {
+            "checkOnSave": {
+              // rust-analyzer.check.command (default: "check")
+              // "command": "clippy"
+            }
+          }
+        },
+        "eslint": {
+          "settings": {
+            "codeActionOnSave": {
+              "rules": ["import/order"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
